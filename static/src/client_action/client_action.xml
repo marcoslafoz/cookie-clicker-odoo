@@ -45,15 +45,15 @@
                 </div>
             </t>
 
-            <t t-set-slot="trees" title="'Trees and Fruits'" isVisible="this.clicker.level >=4">
+            <t t-set-slot="trees" title="'Items y edificios'" isVisible="this.clicker.level >=4">
                 <div class="ms-1 mt-1">
-                    <h2> Trees </h2>
+                    <h2> Edificios </h2>
                     <div class="d-flex flex-row">
                         <t t-foreach="this.clicker.trees" t-as="tree" t-key="tree">
                             <div t-if="tree_value.level lte this.clicker.level" class="card me-3">
                                 <div class="card-header">
                                     <t t-esc="tree_value.purchased"/>x <t t-esc="tree"/> (1x <t t-esc="tree_value.produce"/> /30seconds)
-                                    <i class="fa fa-tree"></i>
+                                    <i class="fa fa-building"></i>
                                 </div>
                                 <div class="card-body">
                                     <button t-on-click="() => this.clicker.buyTree(tree)" class="btn btn-primary" t-att-disabled="this.clicker.clicks lt tree_value.price">
@@ -64,7 +64,7 @@
                         </t>
                     </div>
 
-                    <h2> Fruits </h2>
+                    <h2> Items </h2>
                     <div class="d-flex flex-row">
                         <t t-foreach="this.clicker.fruits" t-as="fruit" t-key="fruit">
                             <div class="card me-3">
